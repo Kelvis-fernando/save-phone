@@ -23,4 +23,9 @@ angular.module("phoneList")
         1
       );
     };
+
+    $scope.orderBy = function(campo) {
+      $scope.orderCamp = campo;
+      $scope.directionOrder = !$scope.directionOrder;
+    }
   });
