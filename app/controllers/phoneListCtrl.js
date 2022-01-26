@@ -1,12 +1,12 @@
 angular.module("phoneList")
-  .controller("phoneListCtrl", function ($scope) {
+  .controller("phoneListCtrl", function ($scope, editContact, generateSerial) {
+    console.log(generateSerial.generate())
     $scope.contacts = [];
     $scope.createContact = function () {
       if ($scope.phone.length < 8 || $scope.phone.length > 9) {
         alert("Adicione um numero Valido");
       } else {
         $scope.contacts.push({
-          id: $scope.index,
           name: $scope.name,
           phone: $scope.phone,
           date: new Date(),
@@ -24,7 +24,12 @@ angular.module("phoneList")
       );
     };
 
-    $scope.orderBy = function(campo) {
+    $scope.editContact = function (contact) {
+      editContact.getData(contact);
+      editContact.clearData();
+    }
+
+    $scope.orderBy = function (campo) {
       $scope.orderCamp = campo;
       $scope.directionOrder = !$scope.directionOrder;
     }
