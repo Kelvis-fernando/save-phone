@@ -1,4 +1,10 @@
 angular.module("phoneList")
+  .config(["$routerProvider", function ($routerProvider) {
+    $routerProvider, when('/edit-profile/:id', {
+      templateUrl: './components/edit-contact.html',
+      controller: 'phoneListCtrl',
+    })
+  }])
   .controller("phoneListCtrl", function ($scope, editContact, generateSerial) {
     console.log(generateSerial.generate())
     $scope.contacts = [];
