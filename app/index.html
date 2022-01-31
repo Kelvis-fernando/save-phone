@@ -34,7 +34,7 @@
       <tbody>
         <tr ng-repeat="(index, contact) in contacts | filter:{name:search} | orderBy:orderCamp:directionOrder">
           <th scope="row">{{ index + 1 }}</th>
-          <td>{{ contact.name }}</td>
+          <td>{{ contact.name | name }}</td>
           <td>{{ contact.phone }}</td>
           <td>{{ contact.date | date:'dd/mm/yyyy hh:mm' }}</td>
           <td>
@@ -57,6 +57,7 @@
   <script src="./controllers/phoneListCtrl.js"></script>
   <script src="./services/editContactService.js"></script>
   <script src="./services/serialGenerator.js"></script>
+  <script src="./filters/nameFilter.js"></script>
 </body>
 
 </html>
