@@ -33,4 +33,6 @@ angular.module("phoneList")
       $scope.orderCamp = campo;
       $scope.directionOrder = !$scope.directionOrder;
     }
+
+    $scope.error = "Tente novamente mais tarde!";
   });
