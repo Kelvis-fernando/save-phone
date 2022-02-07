@@ -1,5 +1,5 @@
 angular.module("phoneList")
-  .controller("phoneListCtrl", function ($scope, editContact, generateSerial, contactApi) {
+  .controller("phoneListCtrl", function ($scope, editContact, generateSerial, contactApi, operadorasApi) {
     console.log(generateSerial.generate())
     $scope.contacts = [];
     $scope.createContact = function () {
@@ -17,6 +17,7 @@ angular.module("phoneList")
         $scope.date = "";
 
         contactApi.getData();
+        operadorasApi.getOperadoras();
       }
     };
 
