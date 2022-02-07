@@ -7,9 +7,8 @@ angular.module("phoneList").provider("generateSerial", function () {
                     serial += String.fromCharCode(Math.floor(Math.random() * 64) + 60);
                 }
 
-                return serial;
+                return console.log(serial);
             }
         }
     }
-
 })

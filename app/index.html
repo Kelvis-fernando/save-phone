@@ -20,7 +20,7 @@
 <body ng-controller="phoneListCtrl">
   <div class="w-75 phone-list">
     <h1>Lista Telefonica</h1>
-    <ui-alert title="Ops, Tivemos um problema" message="error">
+    <ui-alert title="Ops, Tivemos um problema" message="error" ng-if="validate >= 0">
       Refresh
     </ui-alert>
     <input class="form-control my-2" type="text" ng-model="search" placeholder="O que voce esta buscando?">
@@ -64,8 +64,8 @@
   <script src="./services/serialGenerator.js"></script>
   <script src="./filters/nameFilter.js"></script>
   <script src="./filters/ellipsisFilter.js"></script>
-  <script src="./directives/uiAlertDirective.js"></script>
-  <script src="./directives/uiDateDirective.js"></script>
+  <script src="./components/uiAlertDirective.js"></script>
+  <script src="./components/uiDateDirective.js"></script>
   <script src="./services/requestApiService.js"></script>
   <script src="./services/operadorasApiService.js"></script>
 </body>

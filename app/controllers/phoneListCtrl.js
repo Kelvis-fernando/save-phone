@@ -1,23 +1,26 @@
 angular.module("phoneList")
   .controller("phoneListCtrl", function ($scope, editContact, generateSerial, contactApi, operadorasApi) {
-    console.log(generateSerial.generate())
     $scope.contacts = [];
     $scope.createContact = function () {
       if ($scope.phone.length < 8 || $scope.phone.length > 9) {
         alert("Adicione um numero Valido");
       } else {
-        $scope.contacts.push({
-          name: $scope.name,
-          phone: $scope.phone,
-          date: $scope.date,
-        });
+        $scope.validate = $scope.contacts.findIndex((phone) => phone.phone === $scope.phone)
+        if ($scope.validate < 0) {
+          $scope.contacts.push({
+            name: $scope.name,
+            phone: $scope.phone,
+            date: $scope.date,
+          });
 
-        $scope.name = "";
-        $scope.phone = "";
-        $scope.date = "";
+          $scope.name = "";
+          $scope.phone = "";
+          $scope.date = "";
 
-        contactApi.getData();
-        operadorasApi.getOperadoras();
+          contactApi.getData();
+          operadorasApi.getOperadoras();
+          generateSerial.generate();
+        }
       }
     };
 
@@ -38,5 +41,5 @@ angular.module("phoneList")
       $scope.directionOrder = !$scope.directionOrder;
     }
 
-    $scope.error = "Tente novamente mais tarde!";
+    $scope.error = "O numero de telefone e igual a um já adicionado!";
   });
