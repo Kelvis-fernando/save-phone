@@ -39,7 +39,7 @@
           <th scope="row">{{ index + 1 }}</th>
           <td>{{ contact.name | name | ellipsis }}</td>
           <td>{{ contact.phone }}</td>
-          <td>{{ contact.date | date:'dd/mm/yyyy hh:mm' }}</td>
+          <td>{{ contact.date }}</td>
           <td>
             <button class="btn btn-danger" ng-click="deleteContact(contact.name)">Excluir</button>
             <button class="btn btn-warning" ng-click="editContact(contact)">Editar</button>
@@ -51,7 +51,7 @@
       placeholder="Adicione o seu nome" />
     <input type="text" class="form-control mt-3" aria-describedby="basic-addon3" ng-model="phone"
       placeholder="Adicione o seu telefone" />
-    <input type="text" class="form-control mt-3" aria-describedby="basic-addon3" ng-model="contact.date"
+    <input type="text" class="form-control mt-3" aria-describedby="basic-addon3" ng-model="date"
       placeholder="Adicione uma data" ui-date />
     <button class="btn btn-success w-100 mt-3" ng-click="createContact()" ng-disabled="!name || !phone">Salvar
       Contato</button>
@@ -66,6 +66,7 @@
   <script src="./filters/ellipsisFilter.js"></script>
   <script src="./directives/uiAlertDirective.js"></script>
   <script src="./directives/uiDateDirective.js"></script>
+  <script src="./services/requestApiService.js"></script>
 </body>
 
 </html>

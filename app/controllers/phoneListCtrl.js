@@ -1,5 +1,5 @@
 angular.module("phoneList")
-  .controller("phoneListCtrl", function ($scope, editContact, generateSerial) {
+  .controller("phoneListCtrl", function ($scope, editContact, generateSerial, contactApi) {
     console.log(generateSerial.generate())
     $scope.contacts = [];
     $scope.createContact = function () {
@@ -9,11 +9,14 @@ angular.module("phoneList")
         $scope.contacts.push({
           name: $scope.name,
           phone: $scope.phone,
-          date: new Date(),
+          date: $scope.date,
         });
 
         $scope.name = "";
         $scope.phone = "";
+        $scope.date = "";
+
+        contactApi.getData();
       }
     };
 
