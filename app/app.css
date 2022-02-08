@@ -22,3 +22,16 @@
 .ui-message { 
     color: #AF4341;
 }
+
+.ui-accordion-title {
+    margin: 8px;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: rgb(197, 193, 193);
+    height: 50px;
+    padding: 5px 0px;
+}
+
+.ui-accordion-message {
+    background-color: #f8f4f4;
+}

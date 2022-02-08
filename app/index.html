@@ -20,6 +20,24 @@
 <body ng-controller="phoneListCtrl">
   <div class="w-75 phone-list">
     <h1>Lista Telefonica</h1>
+    <accordions>
+      <ui-accordion title="Accordion 1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolor magni est? Pariatur dolore dignissimos
+        repudiandae, optio quis veritatis cum, aspernatur non amet earum exercitationem quisquam sequi ad laboriosam?
+        Error.
+      </ui-accordion>
+      <ui-accordion title="Accordion 2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolor magni est? Pariatur dolore dignissimos
+        repudiandae, optio quis veritatis cum, aspernatur non amet earum exercitationem quisquam sequi ad laboriosam?
+        Error.
+      </ui-accordion>
+      <ui-accordion title="Accordion 3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolor magni est? Pariatur dolore dignissimos
+        repudiandae, optio quis veritatis cum, aspernatur non amet earum exercitationem quisquam sequi ad laboriosam?
+        Error.
+      </ui-accordion>
+    </accordions>
+
     <ui-alert title="Ops, Tivemos um problema" message="error" ng-if="validate >= 0">
       Refresh
     </ui-alert>
@@ -68,6 +86,7 @@
   <script src="./components/uiDateDirective.js"></script>
   <script src="./services/requestApiService.js"></script>
   <script src="./services/operadorasApiService.js"></script>
+  <script src="./components/uiAccordion.js"></script>
 </body>
 
 </html>
